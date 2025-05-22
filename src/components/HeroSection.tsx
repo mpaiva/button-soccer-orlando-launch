@@ -5,7 +5,7 @@ import { Dices } from 'lucide-react';
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center bg-bso-beige pt-16">
       <div className="absolute inset-0 z-0">
-        <div className="h-full w-full bg-[url('https://images.unsplash.com/photo-1554118879-e456fc79a245?q=80&w=2047&auto=format&fit=crop')] bg-fixed bg-cover bg-center opacity-10"></div>
+        <div className="h-full w-full bg-fixed bg-cover bg-center opacity-10"></div>
       </div>
       <div className="container mx-auto z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
