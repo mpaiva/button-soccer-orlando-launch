@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,7 +10,7 @@ const MeetupSection = () => {
   const nextMeetup = {
     time: "Last Saturday of the month",
     location: "Community Recreation Center",
-    address: "123 Main Street, Orlando, FL 32801"
+    address: "To be decided"
   };
 
   return (
