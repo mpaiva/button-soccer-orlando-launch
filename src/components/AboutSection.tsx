@@ -36,7 +36,7 @@ const AboutSection = () => {
                 <iframe 
                   width="100%" 
                   height="100%" 
-                  src="https://www.youtube.com/embed/dQAdylV1ihY" 
+                  src="https://www.youtube.com/embed/ErbN7hNBkuM" 
                   title="Button Soccer Gameplay" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowFullScreen
