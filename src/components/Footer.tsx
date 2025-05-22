@@ -31,12 +31,6 @@ const Footer = () => {
                 >
                   <Instagram className="h-5 w-5 mr-2" /> @buttonsoccer
                 </a>
-                <a 
-                  href="mailto:info@buttonsoccerorlando.com" 
-                  className="text-gray-700 hover:text-bso-red transition-colors"
-                >
-                  info@buttonsoccerorlando.com
-                </a>
               </div>
             </div>
             
