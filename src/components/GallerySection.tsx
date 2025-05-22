@@ -3,14 +3,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const GallerySection = () => {
-  // In a real app, these images would come from your own collection
+  // Button soccer specific images
   const galleryImages = [
-    "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800&auto=format&fit=crop&q=60",
-    "https://images.unsplash.com/photo-1459865264687-595d652de67e?w=800&auto=format&fit=crop&q=60",
-    "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&auto=format&fit=crop&q=60",
-    "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&auto=format&fit=crop&q=60",
-    "https://images.unsplash.com/photo-1610801264293-6281420068d3?w=800&auto=format&fit=crop&q=60",
-    "https://images.unsplash.com/photo-1511886929837-354d827aae26?w=800&auto=format&fit=crop&q=60",
+    "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&auto=format&fit=crop&q=60", // Keeping one colorful image
+    "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&auto=format&fit=crop&q=60", // Table game
+    "https://images.unsplash.com/photo-1606167668584-78701c57f90d?w=800&auto=format&fit=crop&q=60", // People playing a table game
+    "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=60", // Game pieces
+    "https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?w=800&auto=format&fit=crop&q=60", // Table game with players
+    "https://images.unsplash.com/photo-1611079830811-292d9cb89aba?w=800&auto=format&fit=crop&q=60", // Close-up of game pieces
   ];
 
   return (
