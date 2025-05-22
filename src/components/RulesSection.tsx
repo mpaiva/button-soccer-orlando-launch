@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dices, Flag, Play, Square, LayoutGrid } from 'lucide-react';
+
 const RulesSection = () => {
   const rules = [{
     title: "Setup the Field",
@@ -25,6 +27,7 @@ const RulesSection = () => {
     description: "Games are typically played to 3 goals, with matches being best of 3 games.",
     icon: Dices
   }];
+
   return <section id="rules" className="py-20 bg-bso-beige">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -84,9 +87,10 @@ const RulesSection = () => {
         </div>
         
         <div className="text-center">
-          <Button variant="outline" size="lg" className="border-bso-blue text-bso-blue hover:bg-bso-blue hover:text-white" onClick={() => window.open("https://docs.google.com/document/d/1XYZ123/edit", "_blank")}>Read the Rulebook</Button>
+          <Button variant="outline" size="lg" className="border-bso-blue text-bso-blue hover:bg-bso-blue hover:text-white" onClick={() => window.open("https://github.com/mpaiva/button-soccer-orlando-launch/blob/main/README.md", "_blank")}>Read the Rulebook</Button>
         </div>
       </div>
     </section>;
 };
+
 export default RulesSection;
