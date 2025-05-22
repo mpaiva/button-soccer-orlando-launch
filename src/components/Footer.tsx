@@ -1,21 +1,14 @@
-
 import React from 'react';
 import { Instagram } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-bso-darkBeige py-12">
+  return <footer className="bg-bso-darkBeige py-12">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0 flex items-center">
-            <img 
-              src="/lovable-uploads/9491f910-5ae8-4919-8112-80805fd8f570.png" 
-              alt="Button Soccer Orlando Logo" 
-              className="h-12 w-auto mr-3"
-            />
+            <img src="/lovable-uploads/9491f910-5ae8-4919-8112-80805fd8f570.png" alt="Button Soccer Orlando Logo" className="h-12 w-auto mr-3" />
             <div>
               <h3 className="text-xl font-heading text-bso-blue">Button Soccer Orlando</h3>
-              <p className="text-sm text-gray-600">Bringing Brazil's favorite tabletop game to Florida</p>
+              <p className="text-sm text-gray-600">Bringing Brazil's favorite tabletop game to Central Florida</p>
             </div>
           </div>
           
@@ -23,12 +16,7 @@ const Footer = () => {
             <div className="text-center md:text-left">
               <h4 className="text-lg font-bold text-bso-blue mb-3">Connect With Us</h4>
               <div className="flex flex-col space-y-2">
-                <a 
-                  href="https://www.instagram.com/buttonsoccer" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center md:justify-start text-gray-700 hover:text-bso-red transition-colors"
-                >
+                <a href="https://www.instagram.com/buttonsoccer" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start text-gray-700 hover:text-bso-red transition-colors">
                   <Instagram className="h-5 w-5 mr-2" /> @buttonsoccer
                 </a>
               </div>
@@ -55,8 +43,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
