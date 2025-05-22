@@ -10,9 +10,6 @@ import JoinSection from '@/components/JoinSection';
 import Footer from '@/components/Footer';
 import { motion, useAnimation } from 'framer-motion';
 
-// Add framer-motion as a dependency
-<lov-add-dependency>framer-motion@latest</lov-add-dependency>
-
 const Index = () => {
   useEffect(() => {
     // Add smooth scrolling to all links
