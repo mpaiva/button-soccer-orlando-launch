@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/components/ui/use-toast';
 import { JoinFormData } from '@/types/form';
-import { generateRandomPassword } from '@/utils/passwordUtils';
 
 export const useJoinForm = () => {
   const { toast } = useToast();
@@ -45,33 +44,20 @@ export const useJoinForm = () => {
     setIsSubmitting(true);
     
     try {
-      // First attempt to create a user account with email
-      const { data: authData, error: authError } = await supabase.auth.signUp({
-        email: formData.email,
-        password: generateRandomPassword(), // Generate a secure random password
-      });
-      
-      if (authError) {
-        throw new Error(authError.message);
-      }
-      
-      // If user creation is successful, store the additional data in a members table
-      if (authData.user) {
-        const { error: profileError } = await supabase
-          .from('members')
-          .insert({
-            user_id: authData.user.id,
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone || null,
-            referral_source: formData.referral || null,
-            message: formData.message || null,
-            join_whatsapp: formData.joinWhatsapp
-          });
+      // Insert data directly into the members table
+      const { error } = await supabase
+        .from('members')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || null,
+          referral_source: formData.referral || null,
+          message: formData.message || null,
+          join_whatsapp: formData.joinWhatsapp
+        });
           
-        if (profileError) {
-          throw new Error(profileError.message);
-        }
+      if (error) {
+        throw new Error(error.message);
       }
       
       toast({
