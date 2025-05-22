@@ -8,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const JoinSection = () => {
   const { toast } = useToast();
@@ -49,17 +50,34 @@ const JoinSection = () => {
     setIsSubmitting(true);
     
     try {
-      // In a real app, this would send data to your backend
-      // await fetch('https://api.yourbackend.com/signup', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(formData),
-      // });
+      // First attempt to create a user account with email
+      const { data: authData, error: authError } = await supabase.auth.signUp({
+        email: formData.email,
+        password: generateRandomPassword(), // Generate a secure random password
+      });
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      if (authError) {
+        throw new Error(authError.message);
+      }
+      
+      // If user creation is successful, store the additional data in a members table
+      if (authData.user) {
+        const { error: profileError } = await supabase
+          .from('members')
+          .insert({
+            user_id: authData.user.id,
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone || null,
+            referral_source: formData.referral || null,
+            message: formData.message || null,
+            join_whatsapp: formData.joinWhatsapp
+          });
+          
+        if (profileError) {
+          throw new Error(profileError.message);
+        }
+      }
       
       toast({
         title: "Sign up successful!",
@@ -74,15 +92,28 @@ const JoinSection = () => {
         message: '',
         joinWhatsapp: false
       });
-    } catch (error) {
+    } catch (error: any) {
+      console.error("Error during signup:", error);
       toast({
         title: "Something went wrong",
-        description: "Please try again later.",
+        description: error.message || "Please try again later.",
         variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
     }
+  };
+  
+  // Generate a secure random password for the user
+  const generateRandomPassword = () => {
+    const length = 16;
+    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+    let password = "";
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * charset.length);
+      password += charset[randomIndex];
+    }
+    return password;
   };
 
   return (
