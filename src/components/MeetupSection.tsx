@@ -8,7 +8,6 @@ import { Calendar, Clock, MapPin } from 'lucide-react';
 const MeetupSection = () => {
   // Example next meetup date - in a real app this would be dynamic
   const nextMeetup = {
-    date: "June 15, 2025",
     time: "2:00 PM - 6:00 PM",
     location: "Community Recreation Center",
     address: "123 Main Street, Orlando, FL 32801"
@@ -51,7 +50,7 @@ const MeetupSection = () => {
                   <div className="flex items-start justify-between">
                     <div>
                       <h3 className="text-3xl font-heading text-bso-red border border-bso-red border-dashed p-2 inline-block">
-                        {nextMeetup.date}
+                        Coming soon
                       </h3>
                       <p className="text-xl text-gray-700 mt-2 flex items-center">
                         <Clock className="h-5 w-5 mr-2 text-gray-600" />
