@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Instagram } from 'lucide-react';
 
@@ -8,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0 flex items-center">
             <img 
-              src="/lovable-uploads/b4f1171c-56f0-4abb-a69d-fda004d7c2eb.png" 
+              src="/lovable-uploads/9491f910-5ae8-4919-8112-80805fd8f570.png" 
               alt="Button Soccer Orlando Logo" 
               className="h-12 w-auto mr-3"
             />

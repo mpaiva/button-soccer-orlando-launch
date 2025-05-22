@@ -51,7 +51,7 @@ const HeroSection = () => {
           >
             <div className="relative">
               <img 
-                src="/lovable-uploads/b4f1171c-56f0-4abb-a69d-fda004d7c2eb.png" 
+                src="/lovable-uploads/9491f910-5ae8-4919-8112-80805fd8f570.png" 
                 alt="Button Soccer Orlando Logo" 
                 className="w-64 md:w-80 animate-bounce-slow"
               />
