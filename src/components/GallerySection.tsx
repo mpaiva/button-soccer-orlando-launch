@@ -1,16 +1,17 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { AspectRatio } from './ui/aspect-ratio';
 
 const GallerySection = () => {
-  // Button soccer specific images
+  // High quality button soccer specific images
   const galleryImages = [
-    "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&auto=format&fit=crop&q=60", // Keeping one colorful image
-    "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&auto=format&fit=crop&q=60", // Table game
-    "https://images.unsplash.com/photo-1606167668584-78701c57f90d?w=800&auto=format&fit=crop&q=60", // People playing a table game
-    "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=60", // Game pieces
-    "https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?w=800&auto=format&fit=crop&q=60", // Table game with players
-    "https://images.unsplash.com/photo-1611079830811-292d9cb89aba?w=800&auto=format&fit=crop&q=60", // Close-up of game pieces
+    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80", // Close-up of colorful button
+    "https://images.unsplash.com/photo-1590477331018-33be968cd098?w=800&auto=format&fit=crop&q=80", // Miniature game pieces
+    "https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?w=800&auto=format&fit=crop&q=80", // Table game with players
+    "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=80", // Game pieces in action
+    "https://images.unsplash.com/photo-1610801264293-6281420068d3?w=800&auto=format&fit=crop&q=80", // Game board overview
+    "https://images.unsplash.com/photo-1611079830811-292d9cb89aba?w=800&auto=format&fit=crop&q=80", // Close-up of game pieces
   ];
 
   return (
@@ -45,13 +46,15 @@ const GallerySection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="aspect-[4/3] overflow-hidden rounded-lg"
+              className="rounded-lg overflow-hidden shadow-md"
             >
-              <img 
-                src={image} 
-                alt={`Button Soccer Orlando Community Event ${index + 1}`} 
-                className="w-full h-full object-cover transition-all duration-500 hover:scale-110"
-              />
+              <AspectRatio ratio={4/3}>
+                <img 
+                  src={image} 
+                  alt={`Button Soccer Orlando Community Event ${index + 1}`} 
+                  className="w-full h-full object-cover transition-all duration-500 hover:scale-110"
+                />
+              </AspectRatio>
             </motion.div>
           ))}
         </div>
