@@ -51,8 +51,7 @@ const HeroSection = () => {
             <div className="relative">
               <img src="/lovable-uploads/9491f910-5ae8-4919-8112-80805fd8f570.png" alt="Button Soccer Orlando Logo" className="w-64 md:w-80 animate-bounce-slow" />
               <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-bso-blue text-white py-2 px-6 rounded-full">
-                <p className="text-sm font-medium text-center">SOCCER.BUTTON 
-ORLANDO</p>
+                <p className="text-sm font-medium text-center">SOCCER.BUTTON </p>
               </div>
             </div>
           </motion.div>
