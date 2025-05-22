@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar } from 'lucide-react';
+import { Calendar, Clock, MapPin } from 'lucide-react';
 
 const MeetupSection = () => {
   // Example next meetup date - in a real app this would be dynamic
@@ -47,37 +47,47 @@ const MeetupSection = () => {
           >
             <Card className="overflow-hidden border-2 border-bso-blue">
               <CardContent className="p-8">
-                <div className="flex justify-between items-start mb-6">
-                  <div>
-                    <h3 className="text-3xl font-heading text-bso-red">{nextMeetup.date}</h3>
-                    <p className="text-xl text-gray-700">{nextMeetup.time}</p>
+                <div className="flex flex-col space-y-6">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h3 className="text-3xl font-heading text-bso-red border border-bso-red border-dashed p-2 inline-block">
+                        {nextMeetup.date}
+                      </h3>
+                      <p className="text-xl text-gray-700 mt-2 flex items-center">
+                        <Clock className="h-5 w-5 mr-2 text-gray-600" />
+                        {nextMeetup.time}
+                      </p>
+                    </div>
+                    <div className="bg-bso-blue text-white p-4 rounded-full">
+                      <Calendar className="h-6 w-6" />
+                    </div>
                   </div>
-                  <div className="bg-bso-blue text-white p-3 rounded-full">
-                    <Calendar className="h-6 w-6" />
+                  
+                  <div className="space-y-2">
+                    <h4 className="text-2xl font-bold text-bso-blue">{nextMeetup.location}</h4>
+                    <p className="text-gray-700 flex items-center">
+                      <MapPin className="h-5 w-5 mr-2 text-gray-600" />
+                      {nextMeetup.address}
+                    </p>
                   </div>
+                  
+                  <div className="bg-gray-100 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2">What to Expect:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-700">
+                      <li>Button soccer sets available for newcomers</li>
+                      <li>Friendly matches for all skill levels</li>
+                      <li>Mini-tournament with prizes</li>
+                      <li>Brazilian snacks and refreshments</li>
+                    </ul>
+                  </div>
+                  
+                  <Button 
+                    className="w-full bg-bso-red hover:bg-red-700 text-white"
+                    onClick={() => document.getElementById('join')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    RSVP Now
+                  </Button>
                 </div>
-                
-                <div className="mb-6">
-                  <h4 className="text-xl font-bold mb-1">{nextMeetup.location}</h4>
-                  <p className="text-gray-600">{nextMeetup.address}</p>
-                </div>
-                
-                <div className="bg-gray-100 p-4 rounded-lg mb-6">
-                  <h4 className="font-bold mb-2">What to Expect:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-gray-700">
-                    <li>Button soccer sets available for newcomers</li>
-                    <li>Friendly matches for all skill levels</li>
-                    <li>Mini-tournament with prizes</li>
-                    <li>Brazilian snacks and refreshments</li>
-                  </ul>
-                </div>
-                
-                <Button 
-                  className="w-full bg-bso-red hover:bg-red-700 text-white"
-                  onClick={() => document.getElementById('join')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  RSVP Now
-                </Button>
               </CardContent>
             </Card>
           </motion.div>

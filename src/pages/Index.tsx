@@ -8,7 +8,7 @@ import MeetupSection from '@/components/MeetupSection';
 import GallerySection from '@/components/GallerySection';
 import JoinSection from '@/components/JoinSection';
 import Footer from '@/components/Footer';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Index = () => {
   useEffect(() => {
