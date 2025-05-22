@@ -24,12 +24,12 @@ const Footer = () => {
               <h4 className="text-lg font-bold text-bso-blue mb-3">Connect With Us</h4>
               <div className="flex flex-col space-y-2">
                 <a 
-                  href="https://www.instagram.com/buttonsoccerorlando" 
+                  href="https://www.instagram.com/buttonsoccer" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center md:justify-start text-gray-700 hover:text-bso-red transition-colors"
                 >
-                  <Instagram className="h-5 w-5 mr-2" /> @buttonsoccerorlando
+                  <Instagram className="h-5 w-5 mr-2" /> @buttonsoccer
                 </a>
                 <a 
                   href="mailto:info@buttonsoccerorlando.com" 
