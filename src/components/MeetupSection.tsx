@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,7 +7,7 @@ import { Calendar, Clock, MapPin } from 'lucide-react';
 const MeetupSection = () => {
   // Example next meetup date - in a real app this would be dynamic
   const nextMeetup = {
-    time: "We meet on last Saturday of each month.",
+    time: "Last Saturday of the month",
     location: "Community Recreation Center",
     address: "123 Main Street, Orlando, FL 32801"
   };
